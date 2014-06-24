@@ -13,9 +13,6 @@ class ChessGui < Gosu::Window
 	UPPER_SQUARE_MARGIN = 5
 	
 	BOARD_COLOR_TABLE = {
-		#:white => 0xFF1EB1FA,
-		#:black => 0xFF1D4DB5
-		
 		:white => 0xBF1EB1FA,
 		:black => 0xBF1D4DB5,
 		:highlight => 0xBFFFFF00
@@ -31,8 +28,6 @@ class ChessGui < Gosu::Window
 	}
 	
 	CHESSPIECE_COLOR_TABLE = {
-		#:white => 0xFFF4A60,
-		#:black => 0xFFFFFFFF
 		:white => 0xFF000000,
 		:black => 0xFFFFFFFF
 	}
