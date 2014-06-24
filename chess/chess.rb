@@ -103,6 +103,8 @@ class ChessGui < Gosu::Window
 			column = (self.mouse_x/SQUARE_WIDTH).to_i
 			
 			@model.click(row,column)
+		when Gosu::KbR
+			@model.reset
 		end
 	end
 end
@@ -156,10 +158,14 @@ class ChessModel
 	end
 	
 	def click row, column
-		if selected?(row,column)
-			reset_click
+		if @selected.nil?
+			@selected = [row,column] unless @board[row][column].nil?
 		else
-			@selected = [row,column]
+			old_row, old_column = @selected
+			piece = @board[old_row][old_column]
+			@board[row][column] = piece
+			@board[old_row][old_column] = nil
+			@selected = nil
 		end
 	end
 	
