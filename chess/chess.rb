@@ -163,8 +163,8 @@ class ChessModel
 		else
 			old_row, old_column = @selected
 			piece = @board[old_row][old_column]
-			@board[row][column] = piece
 			@board[old_row][old_column] = nil
+			@board[row][column] = piece
 			@selected = nil
 		end
 	end
