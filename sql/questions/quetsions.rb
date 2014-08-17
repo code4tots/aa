@@ -2,9 +2,9 @@ require 'singleton'
 require 'sqlite3'
 
 class QuestionsDatabase < SQLite3::Database
-	include Singleton
-	
-	def initialize
+  include Singleton
+  
+  def initialize
     super('questions.db')
     
     # less efficient, but more convenient to recieve rows as hases instead
@@ -42,3 +42,4 @@ user = User.new({user_id: 12})
 p user
 
 p User.all
+
