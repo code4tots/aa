@@ -5,5 +5,4 @@ class User < ActiveRecord::Base
     foreign_key: :submitter_id,
     class_name: 'ShortenedUrl')
   
-  
 end

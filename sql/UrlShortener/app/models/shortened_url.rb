@@ -7,6 +7,15 @@ class ShortenedUrl < ActiveRecord::Base
     foreign_key: :submitter_id,
     class_name: 'User')
   
+  has_many(:visits,
+    foreign_key: :shortened_url_id,
+    class_name: 'Visit')
+  
+  has_many(:visitors, -> { distinct },
+    through: :visits,
+    source: :visitor,
+    class_name: 'User')
+  
   def self.random_code
     # According to the docs, urlsafe_base64(n) creates a string
     # of rougly 4/3 * n. So I suppose it is reasonable to let n = 16,
