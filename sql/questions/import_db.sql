@@ -52,14 +52,17 @@ CREATE TABLE question_likes (
 INSERT INTO users VALUES
 	( 1, 'A', '1'),
 	( 2, 'B', '2'),
-	( 3, 'C', '3')
+	( 3, 'C', '3'),
+	( 4, 'D', '4')
 	;
 
 INSERT INTO questions VALUES
 	( 1, 1, 'question 1', 'question body 1'), /* question 1 asked by user 1 */
-	( 2, 2, 'question 2', 'question body 2'),
-	( 3, 3, 'question 3', 'question body 3'),
-	( 4, 1, 'question 4', 'question body 4')
+	( 2, 2, 'question 2', 'question body 2'), /* question 2 asked by user 2 */
+	( 3, 3, 'question 3', 'question body 3'), /* question 3 asked by user 3 */
+	( 4, 1, 'question 4', 'question body 4'), /* question 4 asked by user 1 */
+	( 5, 3, 'question 5', 'question body 5'), /* question 5 asked by user 3 */
+	( 6, 3, 'question 6', 'question body 6')  /* question 6 asked by user 3 */
 	;
 
 INSERT INTO question_followers VALUES
@@ -76,6 +79,8 @@ INSERT INTO replies VALUES
 
 INSERT INTO question_likes VALUES
 	( 1, 1, 2), /* user 1 likes question 2 */
-	( 2, 1, 1)  /* user 1 likes quesiton 1 */
+	( 2, 1, 1), /* user 1 likes quesiton 1 */
+	( 3, 2, 1), /* user 2 likes question 1 */
+	( 4, 1, 3)  /* user 1 likes question 3 */
 	;
 

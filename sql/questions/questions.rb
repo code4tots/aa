@@ -22,8 +22,9 @@ class TableObject
   # The field names should be deduced from the database itself.
   def self.initialize_from_database
     query = "PRAGMA table_info(#{table_name})"
+    @attrs = []
     QuestionsDatabase.instance.execute(query).each do |row|
-      attr_accessor row['name']
+      attr_accessor (@attrs << row['name'])[-1]
     end
   end
   
@@ -47,6 +48,34 @@ class TableObject
   def initialize(row={})
     row.each do |key, value|
       self.send(key.to_s+'=', value)
+    end
+  end
+  
+  def save
+    id_name = self.class.id_name
+    attrs = self.class.instance_variable_get("@attrs")
+    
+    if send(id_name).nil?
+      cols = attrs.join(', ')
+      vals = attrs.map { |a| "'#{send(a)}'" }.join(', ')
+      
+      QuestionsDatabase.instance.execute(<<-SQL)
+      INSERT INTO #{self.class.table_name} (#{cols})
+      VALUES      #{vals}
+      SQL
+    else
+      
+      vals = attrs.reject do |a|
+        a == id_name
+      end.map do |a|
+        "#{a} = '#{send(a)}'"
+      end.join(', ')
+      
+      QuestionsDatabase.instance.execute(<<-SQL)
+      UPDATE #{self.class.table_name}
+      SET    #{vals}
+      WHERE  #{id_name} = #{send(id_name)}
+      SQL
     end
   end
 end
@@ -225,11 +254,43 @@ class User
   def followed_questions
     QuestionFollower.followed_questions_for_user_id(user_id)
   end
+  
+  def liked_questions
+    QuestionLike.liked_questions_for_user_id(user_id)
+  end
+  
+  def average_karma
+    QuestionsDatabase.instance.execute(<<-SQL)[0]['x']
+    SELECT
+      CAST(COUNT(ql.question_like_id) AS FLOAT) /
+      COUNT(DISTINCT(q.question_id))
+      x
+    FROM              #{Question.table_name} q
+    LEFT OUTER JOIN   #{QuestionLike.table_name} ql
+    ON                q.question_id = ql.question_id
+    SQL
+  end
 end
 
 class Question
   def followers
     QuestionFollower.followers_for_question_id(question_id)
+  end
+  
+  def self.most_followed(n)
+    QuestionFollower.most_followed_questions(n)
+  end
+  
+  def likers
+    QuestionLike.likers_for_question_id(question_id)
+  end
+  
+  def num_likes
+    QuestionLike.num_likes_for_question_id(question_id)
+  end
+  
+  def self.most_liked(n)
+    QuestionLike.most_liked_questions(n)
   end
 end
 
@@ -283,6 +344,50 @@ class Reply
   end
 end
 
+class QuestionLike
+  def self.likers_for_question_id(question_id)
+    User.find_by_query <<-SQL
+    SELECT  u.*
+    FROM    #{table_name} ql
+    JOIN    #{User.table_name} u
+    ON      ql.user_id = u.user_id
+    WHERE   ql.question_id = #{question_id}
+    SQL
+  end
+  
+  def self.num_likes_for_question_id(question_id)
+    QuestionsDatabase.instance.execute(<<-SQL)[0]['x']
+    SELECT    COUNT(user_id) x
+    FROM      #{table_name} ql
+    GROUP BY  question_id
+    HAVING    question_id = #{question_id}
+    SQL
+  end
+  
+  def self.liked_questions_for_user_id(user_id)
+    Question.find_by_query <<-SQL
+    SELECT  q.*
+    FROM    #{table_name} ql
+    JOIN    #{Question.table_name} q
+    ON      ql.question_id = q.question_id
+    WHERE   ql.user_id = #{user_id}
+    SQL
+  end
+  
+  def self.most_liked_questions(n)
+    # Pretty much identical to QuestionFollower::most_followed_questions
+    Question.find_by_query <<-SQL
+    SELECT           q.*
+    FROM             #{Question.table_name} q
+    LEFT OUTER JOIN  #{table_name} ql
+    ON               ql.question_id = q.question_id
+    GROUP BY         question_id
+    ORDER BY         COUNT(ql.user_id) DESC
+    LIMIT            #{n}
+    SQL
+  end
+end
+
 user1 = User.find_by_id(1)
 question1 = Question.find_by_id(1)
 question_follower1 = QuestionFollower.find_by_id(1)
@@ -307,15 +412,45 @@ question_like1 = QuestionLike.find_by_id(1)
 # p reply2.parent_reply
 # p reply1.child_replies
 
-
 # ------------------------ MEDIUM ----------------------------
 
 # p QuestionFollower.followers_for_question_id(1)
 # p QuestionFollower.followed_questions_for_user_id(1)
 # p user1.followed_questions
-
-
+# p question1.followers
 
 # ------------------------ HARD ----------------------------
 
-p QuestionFollower.most_followed_questions(10)
+# p QuestionFollower.most_followed_questions(10)
+# p Question.most_followed(10)
+#
+# p QuestionLike.likers_for_question_id(1)
+# p QuestionLike.num_likes_for_question_id(1)
+# p QuestionLike.liked_questions_for_user_id(1)
+# p question1.likers
+# p question1.num_likes
+# p user1.liked_questions
+# p QuestionLike.most_liked_questions(1)
+# p Question.most_liked(2)
+# p user1.average_karma
+# p User.find_by_user_id(3).average_karma
+
+<<-TEST
+clear && rm questions.db && cat import_db.sql | sqlite3 questions.db && ruby questions.rb
+TEST
+
+#### Modification works as desired!!!
+#### 
+#### WARNING!!!! If you use above line to test, it will clear
+#### Any changes made between sessions. To see the difference,
+#### Just run
+####
+####      ruby questions.rb
+####
+#### And it will work as expected.
+####
+
+# user1.fname = 'first name'
+# user1.save
+
+p User.all
