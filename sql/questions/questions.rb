@@ -47,7 +47,7 @@ class TableObject
   
   def initialize(row={})
     row.each do |key, value|
-      self.send(key.to_s+'=', value)
+      self.send(key.to_s + '=', value)
     end
   end
   
