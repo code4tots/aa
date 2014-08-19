@@ -18,7 +18,6 @@ module Associatable
       # STDOUT.puts " #{Human.all[0].inspect}"
       # STDOUT.puts " ------------------------------------------ hello"
       
-      
       source_options.model_class.new(DBConnection.execute(<<-SQL)[0])
       SELECT  s.*
       FROM    #{source_options.table_name} s  /* table with our target */
