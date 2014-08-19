@@ -10,7 +10,7 @@ class AssocOptions
   )
 
   def model_class
-    table_name.singularize.camelcase.constantize
+    class_name.constantize
   end
 
   def table_name
@@ -59,7 +59,7 @@ module Associatable
     options = BelongsToOptions.new(name, options)
     
     define_method(name) do
-      options.class_name.constantize.new(DBConnection.execute(<<-SQL)[0])
+      options.model_class.new(DBConnection.execute(<<-SQL)[0])
       SELECT *
       FROM   #{options.table_name}
       WHERE  #{options.primary_key} = #{send(options.foreign_key)}
@@ -73,7 +73,7 @@ module Associatable
     options = HasManyOptions.new(name, self.name, options)
     
     define_method(name) do
-      options.class_name.constantize.parse_all(DBConnection.execute(<<-SQL))
+      options.model_class.parse_all(DBConnection.execute(<<-SQL))
       SELECT *
       FROM   #{options.table_name}
       WHERE  #{options.foreign_key} = #{send(options.primary_key)}
