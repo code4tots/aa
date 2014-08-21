@@ -1,0 +1,70 @@
+<!--
+  This seems really bad...
+  I feel like we should iterate over the columns,
+  and then depending on the type fo the column
+  figure out what kind of input to allow.
+-->
+
+<table>
+  <tr>
+    <td> Name </td>
+    <td>
+      <%= text_field_tag('cat[name]', cat.name) %>
+    </td>
+  </tr>
+  <tr>
+    <td> Age </td>
+    <td>
+      <%= text_field_tag('cat[age]', cat['age']) %>
+    </td>
+  </tr>
+  <tr>
+    <td> Sex </td>
+    <td>
+      <!--
+        radio button is checked regardless of the associated value
+        if the attribute is present.
+        
+        In fact, it looks like radio button defaults to being pressed
+        if even an empty options hash is given....
+        
+        It feels to me as though this is a bug in rails.
+      -->
+        
+      <%=
+      if cat.sex == 'M'
+        radio_button_tag 'cat[sex]', 'M', {checked: :checked}
+      else
+        radio_button_tag 'cat[sex]', 'M'
+      end
+        %> Male
+        
+      <%=
+      if cat.sex == 'F'
+        radio_button_tag 'cat[sex]', 'F', {checked: :checked}
+      else
+        radio_button_tag 'cat[sex]', 'F'
+      end
+        %> Female
+        
+    </td>
+  </tr>
+  <tr>
+    <td> Color </td>
+    <td>
+      <%= select_tag "cat[color]",
+        options_for_select([""] + Cat::COLORS,
+        cat.color)%>
+    </td>
+  </tr>
+  <tr>
+    <td> Birthday </td>
+    <td> <%= date_field_tag 'cat[birth_date]', cat.birth_date %> </td>
+  </tr>
+  <tr>
+    <td> Description </td>
+    <td>
+      <%= text_area_tag 'cat[description]', cat.description %>
+    </td>
+  </tr>
+</table>

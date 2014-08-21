@@ -1,0 +1,6 @@
+<h1>List a new Cat!</h1>
+
+<%= form_tag(cats_url, method: 'post') do %>
+  <%= render partial: "form", locals: {cat: Cat.new } %>
+  <%= submit_tag("New Cat!") %>
+<% end %>
