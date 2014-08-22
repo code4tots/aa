@@ -1,0 +1,17 @@
+<h1>Cat Rental Request Listings</h1>
+
+<table>
+  <tr>
+    <% CatRentalRequest.column_names.each do |column_name| %>
+      <th> <%= column_name %> </th>
+    <% end %>
+  </tr>
+  
+  <% CatRentalRequest.all.each do |cat_rental_request| %>
+    <tr>
+      <% CatRentalRequest.column_names.each do |column_name| %>
+        <td> <%= cat_rental_request[column_name] %> </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

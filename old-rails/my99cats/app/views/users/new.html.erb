@@ -1,0 +1,10 @@
+<h1>Create a new user!</h1>
+
+<%= form_tag(users_url, method: 'post') do %>
+  username: <%= text_field_tag 'user[user_name]' %>
+  <br />
+  password: <%= password_field_tag 'user[password]' %>
+  <br />
+  <%= submit_tag('create user!') %>
+<% end %>
+
