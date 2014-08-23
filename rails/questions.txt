@@ -1,0 +1,13 @@
+(AddUserIdToCats)
+
+add_column :cats, :user_id, :integer, null: false
+
+results in
+
+SQLite3::SQLException: Cannot add a NOT NULL column with default value NULL: ALTER TABLE "cats" ADD "user_id" integer NOT NULL/Library/Ruby/Gems/2.0.0/gems/sqlite3-1.3.9/lib/sqlite3/database.rb:91:in `initialize'
+
+
+---------- Ah ---------
+
+possibly on postgres this may be OK.
+

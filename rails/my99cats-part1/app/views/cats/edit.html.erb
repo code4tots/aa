@@ -1,0 +1,5 @@
+<h1>Edit da Cat</h1>
+
+<%= form_tag(cat_url(@cat), method: 'patch') do %>
+  <%= render "form", cat: @cat, submit_button_text: 'submit edits!' %>
+<% end %>

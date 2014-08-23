@@ -1,0 +1,38 @@
+<h1> <%= "A Cat named #{@cat.name} (#{@cat.id})" %> </h1>
+
+<table>
+  <tr>
+    <th>property name</th>
+    <th>value </th>
+  </tr>
+  
+  <% Cat.column_names.each do |column_name| %>
+    <tr>
+      <td> <%= column_name %> </td>
+      <td> <%= @cat[column_name] %> </td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<% @cat.rental_requests.order(:start_date).each do |cat_rental_request| %>
+  <%= cat_rental_request.start_date %>
+  <%= "-------" %>
+  <%= cat_rental_request.end_date %>
+  <%= "-------" %>
+  <%= cat_rental_request.status %>
+  
+  <% x = Rails.application.routes.url_helpers %>
+  
+  <% if cat_rental_request.status == "PENDING" %>
+    <%= button_to "APPROVE", approve_cat_rental_request_url(cat_rental_request) %>
+    <%= button_to "DENY",       deny_cat_rental_request_url(cat_rental_request) %>
+  <% end %>
+  
+  <br />
+<% end %>
+
+<br />
+<%= link_to 'edit', edit_cat_url(@cat) %>
+
