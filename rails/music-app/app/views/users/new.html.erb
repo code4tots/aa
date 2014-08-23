@@ -1,0 +1,4 @@
+<%= form_tag users_url, method: 'post' do %>
+  <%= render partial: 'shared/credentials_form' %>
+  <%= submit_tag 'create new user!' %>
+<% end %>

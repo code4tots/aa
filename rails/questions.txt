@@ -1,4 +1,4 @@
-(AddUserIdToCats)
+((((((((((((AddUserIdToCats))))))))))))
 
 add_column :cats, :user_id, :integer, null: false
 
@@ -10,4 +10,19 @@ SQLite3::SQLException: Cannot add a NOT NULL column with default value NULL: ALT
 ---------- Ah ---------
 
 possibly on postgres this may be OK.
+
+
+
+((((((((((((Authentication))))))))))))
+
+Is not ok to just
+
+  def is_password?(password)
+    password_digest == BCrypt::Password.create(password)
+  end
+
+
+((((((((((((Authentication))))))))))))
+
+Also I take it that <%= form_tag ... %> takes care of the CSRF authenticity token stuff.
 
