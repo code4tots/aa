@@ -7,10 +7,13 @@ module Phase4
     end
 
     def render_content(content, type)
+      
     end
 
     # method exposing a `Session` object
     def session
+      @session = Session.new(@req) if @session.nil?
+      @session
     end
   end
 end
