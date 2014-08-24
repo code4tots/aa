@@ -1,0 +1,5 @@
+<h1>All Users</h1>
+<% User.all.each do |user| %>
+  <%= render partial: 'short', locals: { user: user } %> <br />
+<% end %>
+<%= link_to new_user_url %>
