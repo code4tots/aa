@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
   
   def create
-    User.create!(user_params)
+    user = User.create!(user_params)
+    log_in!(user)
     redirect_to users_url
   end
   

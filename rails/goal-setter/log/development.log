@@ -2150,3 +2150,1853 @@ Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 15:51:26 -0700
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 15:51:26 -0700
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 20:20:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (8.5ms)
+  Rendered users/new.html.erb within layouts/application (11.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 563ms (Views: 552.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:20:08 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:20:08 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:20:08 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:20:08 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:20:08 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:20:08 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:20:08 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:20:08 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:20:08 -0700
+
+
+Started GET "/users/" for 127.0.0.1 at 2014-08-24 20:20:13 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.5ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 20:20:16 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 20:20:18 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (1.4ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2014-08-24 20:20:21 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"sign in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'user1' LIMIT 1
+Redirected to http://localhost:3000/users
+Completed 302 Found in 61ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:20:21 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'pJHHlqsNLq4bZHvwVouHPA' LIMIT 1
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-24 20:21:50 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (1.3ms)
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:21:53 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.5ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (7.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'pJHHlqsNLq4bZHvwVouHPA' LIMIT 1[0m
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:21:53 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:21:53 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:21:53 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:21:53 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:21:53 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:21:53 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:21:53 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:21:53 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:21:53 -0700
+
+
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 20:21:55 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (9.0ms)
+  Rendered sessions/new.html.erb within layouts/application (10.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'pJHHlqsNLq4bZHvwVouHPA' LIMIT 1
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2014-08-24 20:21:58 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'a' LIMIT 1[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 60ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:21:58 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'WlBB4yDtPfFBXryjy5_tkA' LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:21:58 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:21:58 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:21:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:21:58 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:21:58 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:21:58 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:21:58 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:21:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:21:58 -0700
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:22:12 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'WlBB4yDtPfFBXryjy5_tkA' LIMIT 1[0m
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:22:12 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:22:12 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:12 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:12 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:12 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:22:12 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:12 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:12 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:12 -0700
+
+
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 20:22:13 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'WlBB4yDtPfFBXryjy5_tkA' LIMIT 1
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2014-08-24 20:22:14 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'a' LIMIT 1[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 60ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:22:14 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'WlBB4yDtPfFBXryjy5_tkA' LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:22:14 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:14 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:14 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:22:14 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:22:14 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:14 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:14 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:14 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:14 -0700
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 20:22:24 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'WlBB4yDtPfFBXryjy5_tkA' LIMIT 1
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-08-24 20:22:27 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "user"=>{"username"=>"a", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'a' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."session_token" = 'xMWVe1EvALvE3N0X7jMPYg' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 67ms
+
+ActiveRecord::RecordInvalid (Validation failed: Username has already been taken):
+  app/controllers/users_controller.rb:7:in `create'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-08-24 20:22:34 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "user"=>{"username"=>"c", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'c' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."session_token" = 'fyq8hNdM8S-ZrjTK5jptOQ' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-25 03:22:34.122962"], ["password_digest", "$2a$10$JHMMOr5xN9ZPqHl/3ZbASeZsFQO3cioNpBg2d4p7gOioH0G14Tw22"], ["session_token", "fyq8hNdM8S-ZrjTK5jptOQ"], ["updated_at", "2014-08-25 03:22:34.122962"], ["username", "c"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 65ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:22:34 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.3ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'WlBB4yDtPfFBXryjy5_tkA' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:34 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:22:34 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:34 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:22:34 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:22:34 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:34 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:34 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:34 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:34 -0700
+
+
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 20:22:35 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'WlBB4yDtPfFBXryjy5_tkA' LIMIT 1
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2014-08-24 20:22:37 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "user"=>{"username"=>"c", "password"=>"[FILTERED]"}, "commit"=>"sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'c' LIMIT 1[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 61ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:22:37 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'Q6VIrHQWPKtz9-ldPtFhyg' LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:37 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:22:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:37 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:37 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:22:37 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:22:37 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:37 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:37 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:22:37 -0700
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:23:14 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'Q6VIrHQWPKtz9-ldPtFhyg' LIMIT 1[0m
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:23:14 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:23:14 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:23:14 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:14 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:14 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:14 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:14 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:14 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:14 -0700
+
+
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 20:23:15 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'Q6VIrHQWPKtz9-ldPtFhyg' LIMIT 1
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2014-08-24 20:23:18 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "user"=>{"username"=>"c", "password"=>"[FILTERED]"}, "commit"=>"sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'c' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'c' AND "users"."id" != 3) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'iwP5L5qhOwyzrFEOZCmTkQ' AND "users"."id" != 3) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 3[0m  [["session_token", "iwP5L5qhOwyzrFEOZCmTkQ"], ["updated_at", "2014-08-25 03:23:18.694205"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 65ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:23:18 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.3ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'iwP5L5qhOwyzrFEOZCmTkQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'iwP5L5qhOwyzrFEOZCmTkQ' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:23:18 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:23:18 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:18 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:23:18 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:18 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:18 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:18 -0700
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:23:26 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'iwP5L5qhOwyzrFEOZCmTkQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'iwP5L5qhOwyzrFEOZCmTkQ' LIMIT 1
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:23:26 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:23:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:26 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:23:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:26 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:26 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:23:26 -0700
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:25:21 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'iwP5L5qhOwyzrFEOZCmTkQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'iwP5L5qhOwyzrFEOZCmTkQ' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:25:21 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:21 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:21 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:21 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:25:21 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:25:21 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:21 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:21 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:21 -0700
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:25:24 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'iwP5L5qhOwyzrFEOZCmTkQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'iwP5L5qhOwyzrFEOZCmTkQ' LIMIT 1
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:25:24 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:25:24 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:25:24 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:24 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:24 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:24 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:24 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:24 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:24 -0700
+
+
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 20:25:26 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'iwP5L5qhOwyzrFEOZCmTkQ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'c' AND "users"."id" != 3) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'R_goTECYtKPQ0wlcba3bWw' AND "users"."id" != 3) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 3[0m  [["session_token", "R_goTECYtKPQ0wlcba3bWw"], ["updated_at", "2014-08-25 03:25:26.159832"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 20:25:26 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (1.2ms)
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:25:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:26 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:25:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:26 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:25:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:26 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:26 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:26 -0700
+
+
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 20:25:27 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2014-08-24 20:25:30 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "user"=>{"username"=>"c", "password"=>"[FILTERED]"}, "commit"=>"sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'c' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'c' AND "users"."id" != 3) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' AND "users"."id" != 3) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 3[0m  [["session_token", "KG43Y9VQIo5s5A8KIA-SRg"], ["updated_at", "2014-08-25 03:25:30.762620"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 63ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:25:30 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:25:30 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:30 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:30 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:25:30 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:30 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:25:30 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:30 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:30 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:25:30 -0700
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:26:02 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:26:09 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:26:09 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:26:14 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:26:23 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:26:57 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1[0m
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:26:58 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 20:27:03 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KG43Y9VQIo5s5A8KIA-SRg' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'c' AND "users"."id" != 3) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'UHUhMENBlKSPDBHAh64E9Q' AND "users"."id" != 3) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 3[0m  [["session_token", "UHUhMENBlKSPDBHAh64E9Q"], ["updated_at", "2014-08-25 03:27:03.387293"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 20:27:03 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:27:03 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:27:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:27:03 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:27:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:27:03 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:27:03 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:27:03 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:27:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:27:03 -0700
+
+
+Started POST "/session" for 127.0.0.1 at 2014-08-24 20:27:07 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "user"=>{"username"=>"c", "password"=>"[FILTERED]"}, "commit"=>"sign in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'c' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'c' AND "users"."id" != 3) LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' AND "users"."id" != 3) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 3  [["session_token", "JiTtIOF9RoK0Prt8MDLlHQ"], ["updated_at", "2014-08-25 03:27:07.896998"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 64ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:27:07 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 20:27:07 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 20:27:07 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 20:27:07 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 20:27:07 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 20:27:07 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 20:27:07 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 20:27:07 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 20:27:07 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 20:27:07 -0700
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 20:27:15 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGoals (20140825040900)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "goals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "name" varchar(255) NOT NULL, "access" varchar(255) NOT NULL, "description" text, "status" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140825040900"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_session_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_session_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_username' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_username' AND type='index'
+
+  [1m[36mGoal Load (0.9ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "goals" ("access", "created_at", "name", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["access", "public"], ["created_at", "2014-08-25 04:13:51.153839"], ["name", "goal1"], ["status", "incomplete"], ["updated_at", "2014-08-25 04:13:51.153839"], ["user_id", 1]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals"   ORDER BY "goals"."id" ASC LIMIT 1[0m
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals"   ORDER BY "goals"."id" ASC LIMIT 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateGoals (20140825040900)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "goals"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140825040900'[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_session_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_session_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_username' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_username' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGoals (20140825040900)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "goals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "name" varchar(255) NOT NULL, "access" varchar(255) NOT NULL, "description" text, "status" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_goals_on_user" ON "goals" ("user")[0m
+SQLite3::SQLException: table goals has no column named user: CREATE  INDEX "index_goals_on_user" ON "goals" ("user")
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGoals (20140825040900)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "goals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "name" varchar(255) NOT NULL, "access" varchar(255) NOT NULL, "description" text, "status" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_goals_on_user_id" ON "goals" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_goals_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_goals_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_goals_on_user_id_and_name" ON "goals" ("user_id", "name")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_goals_on_user_id_and_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_goals_on_user_id_and_name' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_goals_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_goals_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_goals_on_user_id_and_status" ON "goals" ("user_id", "status")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140825040900"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_goals_on_user_id_and_status' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_goals_on_user_id_and_status' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_goals_on_user_id_and_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_goals_on_user_id_and_name' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_goals_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_goals_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_session_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_session_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_username' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_username' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateGoals (20140825040900)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "goals"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140825040900'[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_session_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_session_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_username' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_username' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGoals (20140825040900)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "goals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "name" varchar(255) NOT NULL, "access" varchar(255) NOT NULL, "description" text NOT NULL, "status" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_goals_on_user_id" ON "goals" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_goals_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_goals_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_goals_on_user_id_and_name" ON "goals" ("user_id", "name")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_goals_on_user_id_and_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_goals_on_user_id_and_name' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_goals_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_goals_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_goals_on_user_id_and_status" ON "goals" ("user_id", "status")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140825040900"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_goals_on_user_id_and_status' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_goals_on_user_id_and_status' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_goals_on_user_id_and_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_goals_on_user_id_and_name' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_goals_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_goals_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_session_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_session_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_username' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_username' AND type='index'
+
+  [1m[36mGoal Load (1.2ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "goals" ("access", "created_at", "description", "name", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["access", "public"], ["created_at", "2014-08-25 04:17:19.583784"], ["description", "x"], ["name", "goal1"], ["status", "pending"], ["updated_at", "2014-08-25 04:17:19.583784"], ["user_id", 1]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals"   ORDER BY "goals"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "goals" ("access", "created_at", "description", "name", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["access", "public"], ["created_at", "2014-08-25 04:18:50.396442"], ["description", "x"], ["name", "goal1"], ["status", "pending"], ["updated_at", "2014-08-25 04:18:50.396442"], ["user_id", 1]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mGoal Load (1.0ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mGoal Load (0.2ms)[0m  SELECT  "goals".* FROM "goals"  WHERE "goals"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-24 21:53:41 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (1.1ms)
+Completed 200 OK in 12ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 21:53:45 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.5ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (7.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+Completed 200 OK in 94ms (Views: 93.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:53:45 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:53:45 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:53:45 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:53:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:53:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:53:45 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:53:45 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:53:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:53:45 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:53:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:53:45 -0700
+
+
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 21:53:52 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  Rendered goals/index.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `is_viewable_by?' for #<Goal:0x007f9d36a98b90>):
+    1: <h1>All da Goals</h1>
+    2: 
+    3: <% Goal.all.each do |goal| %>
+    4:   <% if goal.is_viewable_by?(current_user) %>
+    5:     <%= render partial: 'short', locals: { goal: goal } %>
+    6:   <% end %>
+    7: <% end %>
+  app/views/goals/index.html.erb:4:in `block in _app_views_goals_index_html_erb__843492992197626522_70156602626900'
+  app/views/goals/index.html.erb:3:in `_app_views_goals_index_html_erb__843492992197626522_70156602626900'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.4ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 21:54:12 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mGoal Load (0.2ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered goals/_short.html.erb (7.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered goals/_short.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  Rendered goals/index.html.erb within layouts/application (19.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:54:12 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:12 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:54:12 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:54:12 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:12 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:54:12 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:12 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:12 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:12 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:12 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:12 -0700
+
+
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 21:54:23 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered goals/_short.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered goals/_short.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  Rendered goals/index.html.erb within layouts/application (3.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:54:23 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:54:23 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:23 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:23 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:54:23 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:54:23 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:23 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:23 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:23 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:23 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:54:23 -0700
+  [1m[36mGoal Load (1.0ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "goals" WHERE "goals"."id" = ?  [["id", 1]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "goals" WHERE "goals"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.6ms)[0m  commit transaction
+
+
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 21:55:28 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GoalsController#index as HTML
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (12.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+Completed 200 OK in 49ms (Views: 41.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:55:28 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:55:28 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:55:28 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:28 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:55:28 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:28 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:28 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:28 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:28 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:28 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:28 -0700
+
+
+Started GET "/goals/new" for 127.0.0.1 at 2014-08-24 21:55:30 -0700
+Processing by GoalsController#new as HTML
+  Rendered goals/_form.html.erb (13.1ms)
+  Rendered goals/new.html.erb within layouts/application (15.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/goals?utf8=%E2%9C%93&goal%5Bname%5D=goal1&goal%5Bstatus%5D=pending&goal%5Baccess%5D=public&goal%5Bdescription%5D=goal1+by+c&commit=create+goal" for 127.0.0.1 at 2014-08-24 21:55:38 -0700
+Processing by GoalsController#index as HTML
+  Parameters: {"utf8"=>"✓", "goal"=>{"name"=>"goal1", "status"=>"pending", "access"=>"public", "description"=>"goal1 by c"}, "commit"=>"create goal"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (0.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:55:38 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:38 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:55:38 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:55:38 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:55:38 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:38 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:38 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:38 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:38 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:38 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:38 -0700
+
+
+Started GET "/goals?utf8=%E2%9C%93&goal%5Bname%5D=goal1&goal%5Bstatus%5D=pending&goal%5Baccess%5D=public&goal%5Bdescription%5D=goal1+by+c&commit=create+goal" for 127.0.0.1 at 2014-08-24 21:55:45 -0700
+Processing by GoalsController#index as HTML
+  Parameters: {"utf8"=>"✓", "goal"=>{"name"=>"goal1", "status"=>"pending", "access"=>"public", "description"=>"goal1 by c"}, "commit"=>"create goal"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (0.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:55:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:45 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:55:45 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:55:45 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:55:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:45 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:45 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:45 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:55:45 -0700
+  [1m[36mGoal Load (1.7ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+
+
+Started GET "/goals?utf8=%E2%9C%93&goal%5Bname%5D=goal1&goal%5Bstatus%5D=pending&goal%5Baccess%5D=public&goal%5Bdescription%5D=goal1+by+c&commit=create+goal" for 127.0.0.1 at 2014-08-24 21:56:18 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GoalsController#index as HTML
+  Parameters: {"utf8"=>"✓", "goal"=>{"name"=>"goal1", "status"=>"pending", "access"=>"public", "description"=>"goal1 by c"}, "commit"=>"create goal"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (12.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+Completed 200 OK in 48ms (Views: 41.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:56:18 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:56:18 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:56:18 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:18 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:56:18 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:18 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:18 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:18 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:18 -0700
+
+
+Started GET "/goals/new" for 127.0.0.1 at 2014-08-24 21:56:19 -0700
+Processing by GoalsController#new as HTML
+  Rendered goals/_form.html.erb (13.1ms)
+  Rendered goals/new.html.erb within layouts/application (15.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/goals?utf8=%E2%9C%93&goal%5Bname%5D=a&goal%5Bstatus%5D=pending&goal%5Baccess%5D=public&goal%5Bdescription%5D=x&commit=create+goal" for 127.0.0.1 at 2014-08-24 21:56:23 -0700
+Processing by GoalsController#index as HTML
+  Parameters: {"utf8"=>"✓", "goal"=>{"name"=>"a", "status"=>"pending", "access"=>"public", "description"=>"x"}, "commit"=>"create goal"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:56:23 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:56:23 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:56:23 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:23 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:23 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:23 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:56:23 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:23 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:23 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:23 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:56:23 -0700
+
+
+Started GET "/goals?utf8=%E2%9C%93&goal%5Bname%5D=a&goal%5Bstatus%5D=pending&goal%5Baccess%5D=public&goal%5Bdescription%5D=x&commit=create+goal" for 127.0.0.1 at 2014-08-24 21:57:07 -0700
+Processing by GoalsController#index as HTML
+  Parameters: {"utf8"=>"✓", "goal"=>{"name"=>"a", "status"=>"pending", "access"=>"public", "description"=>"x"}, "commit"=>"create goal"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (0.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:57:07 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:57:07 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:57:07 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:07 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:07 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:57:07 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:07 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:07 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:07 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:07 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:07 -0700
+
+
+Started GET "/goals/new" for 127.0.0.1 at 2014-08-24 21:57:08 -0700
+Processing by GoalsController#new as HTML
+  Rendered goals/_form.html.erb (1.8ms)
+  Rendered goals/new.html.erb within layouts/application (2.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/goals" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "goal"=>{"name"=>"a", "status"=>"pending", "access"=>"public", "description"=>"x"}, "commit"=>"create goal"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "goals" ("access", "created_at", "description", "name", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["access", "public"], ["created_at", "2014-08-25 04:57:11.499383"], ["description", "x"], ["name", "a"], ["status", "pending"], ["updated_at", "2014-08-25 04:57:11.499383"], ["user_id", 3]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/goals
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered goals/_short.html.erb (2.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  Rendered goals/index.html.erb within layouts/application (4.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:57:11 -0700
+
+
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 21:58:44 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mGoal Load (0.3ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered goals/_short.html.erb (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+  Rendered goals/index.html.erb within layouts/application (11.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:58:44 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:58:44 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:58:44 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:58:44 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:58:44 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:58:44 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:58:44 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:58:44 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:58:44 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:58:44 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:58:44 -0700
+
+
+Started GET "/goals/new" for 127.0.0.1 at 2014-08-24 21:58:45 -0700
+Processing by GoalsController#new as HTML
+  Rendered goals/_form.html.erb (2.0ms)
+  Rendered goals/new.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/goals/new" for 127.0.0.1 at 2014-08-24 21:59:04 -0700
+Processing by GoalsController#new as HTML
+  Rendered goals/_form.html.erb (2.0ms)
+  Rendered goals/new.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+Completed 200 OK in 17ms (Views: 11.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:59:04 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:59:04 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:59:04 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:04 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:59:04 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:04 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:04 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:04 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:04 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:04 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:04 -0700
+
+
+Started GET "/goals/new" for 127.0.0.1 at 2014-08-24 21:59:20 -0700
+Processing by GoalsController#new as HTML
+  Rendered goals/_form.html.erb (1.6ms)
+  Rendered goals/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'JiTtIOF9RoK0Prt8MDLlHQ' LIMIT 1
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 21:59:21 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:21 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:21 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 21:59:21 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 21:59:21 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 21:59:21 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:21 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:21 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:21 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:21 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 21:59:21 -0700

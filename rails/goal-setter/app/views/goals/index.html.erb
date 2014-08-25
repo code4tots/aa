@@ -1,0 +1,11 @@
+<h1>All da Goals</h1>
+
+<% Goal.all.each do |goal| %>
+  <% if goal.is_viewable_by?(current_user) %>
+    <%= render partial: 'short', locals: { goal: goal } %> <br />
+  <% end %>
+<% end %>
+
+<% unless current_user.nil? %>
+  <%= link_to 'new goal', new_goal_url %>
+<% end %>
