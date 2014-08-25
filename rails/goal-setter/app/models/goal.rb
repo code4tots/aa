@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: goals
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  name        :string(255)      not null
+#  access      :string(255)      not null
+#  description :text             not null
+#  status      :string(255)      not null
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Goal < ActiveRecord::Base
   include Commentable
   

@@ -5,3 +5,12 @@
     <%= render partial: 'goals/short', locals: { goal: goal } %> <br />
   <% end %>
 <% end %>
+
+<!-- Show all the comments -->
+<% Comment.where(commentable: @user).order(:created_at).each do |comment| %>
+  <%= render partial: 'comments/short', locals: { comment: comment } %>
+<% end %>
+
+<br />
+Comments form:
+<%= render partial: 'comments/form', locals: { comment: Comment.new(commentable: @user) } %>

@@ -6893,3 +6893,1910 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:27:25
   [1m[35mGoal Load (0.2ms)[0m  SELECT  "goals".* FROM "goals"   ORDER BY "goals"."id" ASC LIMIT 1
   [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals"   ORDER BY "goals"."id" ASC LIMIT 1[0m
   [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  [["commentable_id", 1], ["commentable_type", "Goal"]]
+
+
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GoalsController#index as HTML
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered goals/_short.html.erb (7.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (27.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 68ms (Views: 60.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:41:00 -0700
+
+
+Started GET "/users" for 127.0.0.1 at 2014-08-24 23:41:03 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.4ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:41:04 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 3ms
+
+SyntaxError (/Users/math4tots/Home/code/github/aa/rails/goal-setter/app/views/users/show.html.erb:9: syntax error, unexpected '}', expecting =>
+...s: { Comment.new(user: @user) } );@output_buffer.safe_append...
+...                               ^
+/Users/math4tots/Home/code/github/aa/rails/goal-setter/app/views/users/show.html.erb:11: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/math4tots/Home/code/github/aa/rails/goal-setter/app/views/users/show.html.erb:13: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/users/show.html.erb:9: syntax error, unexpected '}', expecting =>
+  app/views/users/show.html.erb:11: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/users/show.html.erb:13: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:42:07 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (6.2ms)
+  Rendered users/show.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined local variable or method `comments_url' for #<#<Class:0x007f97319f6378>:0x007f9733246ec8>):
+    1: <% form_for comment, comments_url, method: :post do |f| %>
+    2:   <%= f.text_field :content %>
+    3:   <%= f.submit :submit %>
+    4: <% end %>
+  app/views/comments/_form.html.erb:1:in `_app_views_comments__form_html_erb__4345218923226093476_70143687245500'
+  app/views/users/show.html.erb:9:in `_app_views_users_show_html_erb___615253976054122817_70143687402760'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:42:27 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (0.6ms)
+  Rendered users/show.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (wrong number of arguments (3 for 1..2)):
+    1: <% form_for comment, comments_url, method: :post do |f| %>
+    2:   <%= f.text_field :content %>
+    3:   <%= f.submit :submit %>
+    4: <% end %>
+  app/views/comments/_form.html.erb:1:in `_app_views_comments__form_html_erb__4345218923226093476_70143687245500'
+  app/views/users/show.html.erb:9:in `_app_views_users_show_html_erb___615253976054122817_70143687402760'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (7.4ms)
+  Rendered users/show.html.erb within layouts/application (8.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:42:41 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:42:51 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (0.4ms)
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:23 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:30 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (0.8ms)
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:41 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (0.8ms)
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:43:59 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (4.1ms)
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:24 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:35 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:39 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (0.9ms)
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:46 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (1.8ms)
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:44:55 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (0.8ms)
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:45:03 -0700
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-24 23:45:06 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"content"=>"hi"}, "commit"=>"submit"}
+Unpermitted parameters: content
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 3ms
+
+ActiveRecord::RecordInvalid (Validation failed: Commentable can't be blank, Content can't be blank):
+  app/controllers/comments_controller.rb:5:in `create'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.6ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-24 23:45:27 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"content"=>"hi"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 12ms
+
+ActiveRecord::RecordInvalid (Validation failed: Commentable can't be blank):
+  app/controllers/comments_controller.rb:5:in `create'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-24 23:45:30 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"content"=>"hi"}, "commit"=>"submit"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 2ms
+
+ActiveRecord::RecordInvalid (Validation failed: Commentable can't be blank):
+  app/controllers/comments_controller.rb:5:in `create'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1
+  Rendered comments/_form.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:29 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1
+  Rendered comments/_form.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:38 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1
+  Rendered comments/_form.html.erb (0.8ms)
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:46:55 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1
+  Rendered comments/_form.html.erb (2.4ms)
+  Rendered users/show.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:51:22 -0700
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-24 23:51:23 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"commentable_id"=>"1", "commentable_type"=>"User", "content"=>""}, "commit"=>"submit"}
+Unpermitted parameters: commentable_id, commentable_type
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 3ms
+
+ActiveRecord::RecordInvalid (Validation failed: Commentable can't be blank, Content can't be blank):
+  app/controllers/comments_controller.rb:5:in `create'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-24 23:51:29 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"commentable_id"=>"1", "commentable_type"=>"User", "content"=>"x"}, "commit"=>"submit"}
+Unpermitted parameters: commentable_id, commentable_type
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 2ms
+
+ActiveRecord::RecordInvalid (Validation failed: Commentable can't be blank):
+  app/controllers/comments_controller.rb:5:in `create'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.6ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-24 23:51:36 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"commentable_id"=>"1", "commentable_type"=>"User", "content"=>"x"}, "commit"=>"submit"}
+Unpermitted parameters: commentable_id, commentable_type
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 2ms
+
+ActiveRecord::RecordInvalid (Validation failed: Commentable can't be blank):
+  app/controllers/comments_controller.rb:5:in `create'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-24 23:52:09 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"commentable_id"=>"1", "commentable_type"=>"User", "content"=>"x"}, "commit"=>"submit"}
+Unpermitted parameters: commentable_id, commentable_type
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 13ms
+
+ActiveRecord::RecordInvalid (Validation failed: Commentable can't be blank):
+  app/controllers/comments_controller.rb:6:in `create'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-24 23:52:40 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"commentable_id"=>"1", "commentable_type"=>"User", "content"=>"x"}, "commit"=>"submit"}
+Unpermitted parameters: commentable_id, commentable_type
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 13ms
+
+ActiveRecord::RecordInvalid (Validation failed: Commentable can't be blank):
+  app/controllers/comments_controller.rb:8:in `create'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-24 23:52:57 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"commentable_id"=>"1", "commentable_type"=>"User", "content"=>"x"}, "commit"=>"submit"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["commentable_id", 1], ["commentable_type", "User"], ["content", "x"], ["created_at", "2014-08-25 06:52:57.536185"], ["updated_at", "2014-08-25 06:52:57.536185"], ["user_id", 3]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Completed 500 Internal Server Error in 16ms
+
+ActionView::MissingTemplate (Missing template comments/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/Users/math4tots/Home/code/github/aa/rails/goal-setter/app/views"
+):
+  actionview (4.1.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.4) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.4) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.4) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.4ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"commentable_id"=>"1", "commentable_type"=>"User", "content"=>"x"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["commentable_id", 1], ["commentable_type", "User"], ["content", "x"], ["created_at", "2014-08-25 06:54:01.069306"], ["updated_at", "2014-08-25 06:54:01.069306"], ["user_id", 3]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 14ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  Rendered comments/_form.html.erb (0.8ms)
+  Rendered users/show.html.erb within layouts/application (4.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:01 -0700
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"commentable_id"=>"1", "commentable_type"=>"User", "content"=>"hi"}, "commit"=>"submit"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["commentable_id", 1], ["commentable_type", "User"], ["content", "hi"], ["created_at", "2014-08-25 06:54:06.011440"], ["updated_at", "2014-08-25 06:54:06.011440"], ["user_id", 3]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1
+  Rendered comments/_form.html.erb (0.6ms)
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:54:06 -0700
+  [1m[36mComment Load (1.1ms)[0m  [1mSELECT "comments".* FROM "comments"[0m
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:56:19 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'User' AND "comments"."commentable_id" = 1  ORDER BY "comments"."created_at" ASC
+  Rendered comments/_short.html.erb (6.5ms)
+  Rendered users/show.html.erb within layouts/application (21.0ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (undefined local variable or method `comemnt' for #<#<Class:0x007f88ccb78f98>:0x007f88ccb784d0>):
+    1: <%= comment.content %> <br />
+    2: <%= comemnt.user %>
+  app/views/comments/_short.html.erb:2:in `_app_views_comments__short_html_erb___1713348155150271422_70112762792540'
+  app/views/users/show.html.erb:10:in `block in _app_views_users_show_html_erb__1517546430168180052_70112763331620'
+  app/views/users/show.html.erb:9:in `_app_views_users_show_html_erb__1517546430168180052_70112763331620'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'User' AND "comments"."commentable_id" = 1  ORDER BY "comments"."created_at" ASC[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered comments/_short.html.erb (6.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered comments/_short.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered comments/_short.html.erb (0.3ms)
+  Rendered comments/_form.html.erb (6.6ms)
+  Rendered users/show.html.erb within layouts/application (17.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 49ms (Views: 48.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:36 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'User' AND "comments"."commentable_id" = 1  ORDER BY "comments"."created_at" ASC[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered comments/_short.html.erb (0.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered comments/_short.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered comments/_short.html.erb (0.3ms)
+  Rendered comments/_form.html.erb (0.6ms)
+  Rendered users/show.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:56:47 -0700
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"  WHERE "goals"."user_id" = 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'User' AND "comments"."commentable_id" = 1  ORDER BY "comments"."created_at" ASC[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered comments/_short.html.erb (0.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered comments/_short.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered comments/_short.html.erb (0.4ms)
+  Rendered comments/_form.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-24 23:57:00 -0700
+
+
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 23:59:06 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered goals/_short.html.erb (1.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  Rendered goals/index.html.erb within layouts/application (6.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/goals/1/edit" for 127.0.0.1 at 2014-08-24 23:59:12 -0700
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals"  WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered goals/_form.html.erb (5.8ms)
+  Rendered goals/edit.html.erb within layouts/application (6.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+Processing by GoalsController#index as HTML
+  [1m[35mGoal Load (0.2ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered goals/_short.html.erb (1.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (14.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+
+
+Started GET "/goals/1" for 127.0.0.1 at 2014-08-25 00:00:39 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals"  WHERE "goals"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered goals/_short.html.erb (0.9ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'Goal' AND "comments"."commentable_id" = 1  ORDER BY "comments"."created_at" ASC
+  Rendered comments/_form.html.erb (3.0ms)
+  Rendered goals/show.html.erb within layouts/application (7.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/goals/1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals"  WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered goals/_short.html.erb (0.8ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'Goal' AND "comments"."commentable_id" = 1  ORDER BY "comments"."created_at" ASC[0m
+  Rendered comments/_form.html.erb (0.6ms)
+  Rendered goals/show.html.erb within layouts/application (3.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:37 -0700
+
+
+Started GET "/goals/1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals"  WHERE "goals"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered goals/_short.html.erb (0.9ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'Goal' AND "comments"."commentable_id" = 1  ORDER BY "comments"."created_at" ASC
+  Rendered comments/_form.html.erb (0.5ms)
+  Rendered goals/show.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 00:01:43 -0700
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-25 00:01:49 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"commentable_id"=>"", "commentable_type"=>"", "content"=>"comment on goal"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 3ms
+
+ActiveRecord::RecordInvalid (Validation failed: Commentable can't be blank):
+  app/controllers/comments_controller.rb:5:in `create'
+
+
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/math4tots/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.8ms)
+
+
+Started GET "/goals/1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals"  WHERE "goals"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered goals/_short.html.erb (0.7ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'Goal' AND "comments"."commentable_id" = 1  ORDER BY "comments"."created_at" ASC
+  Rendered comments/_form.html.erb (0.5ms)
+  Rendered goals/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:12 -0700
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"commentable_id"=>"1", "commentable_type"=>"Goal", "content"=>"ggg"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals"  WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["commentable_id", 1], ["commentable_type", "Goal"], ["content", "ggg"], ["created_at", "2014-08-25 07:02:13.701438"], ["updated_at", "2014-08-25 07:02:13.701438"], ["user_id", 3]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/goals/1
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/goals/1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals"  WHERE "goals"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered goals/_short.html.erb (0.8ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'Goal' AND "comments"."commentable_id" = 1  ORDER BY "comments"."created_at" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered comments/_short.html.erb (0.7ms)
+  Rendered comments/_form.html.erb (0.5ms)
+  Rendered goals/show.html.erb within layouts/application (4.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:13 -0700
+
+
+Started POST "/comments" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1ZPAmSzO2i21O21GpJzlV9HGG4lzpDiXn0MebZcRMQ=", "comment"=>{"commentable_id"=>"1", "commentable_type"=>"Goal", "content"=>"some comment about goal here!"}, "commit"=>"submit"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals"  WHERE "goals"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("commentable_id", "commentable_type", "content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["commentable_id", 1], ["commentable_type", "Goal"], ["content", "some comment about goal here!"], ["created_at", "2014-08-25 07:02:21.282405"], ["updated_at", "2014-08-25 07:02:21.282405"], ["user_id", 3]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/goals/1
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/goals/1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals"  WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered goals/_short.html.erb (0.7ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."commentable_type" = 'Goal' AND "comments"."commentable_id" = 1  ORDER BY "comments"."created_at" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered comments/_short.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered comments/_short.html.erb (0.3ms)
+  Rendered comments/_form.html.erb (0.5ms)
+  Rendered goals/show.html.erb within layouts/application (4.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'p0BEQ2Srhxvb9jcAgK1qNg' LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+
+
+Started GET "/assets/goals.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+
+
+Started GET "/assets/goals.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-08-25 00:02:21 -0700

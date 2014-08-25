@@ -26,6 +26,13 @@ class GoalsController < ApplicationController
     end
   end
   
+  def show
+    @goal = Goal.find(params[:id])
+    if @goal.nil?
+      render json: "that goal doesn't exist"
+    end
+  end
+  
   def update
     goal = Goal.find(params[:id])
     
