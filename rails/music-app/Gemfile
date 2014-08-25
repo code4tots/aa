@@ -7,7 +7,7 @@ group :deveopment do
 end
 
 gem 'bcrypt'
-gem 'pg'
+# gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
