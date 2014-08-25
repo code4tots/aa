@@ -1,4 +1,5 @@
 class Goal < ActiveRecord::Base
+  include Commentable
   
   ACCESSES = %w(public private)
   STATUSES = %w(pending completed)
@@ -6,6 +7,7 @@ class Goal < ActiveRecord::Base
   validates :user_id, :name, :access, :description, :status, presence: true
   validates :access, inclusion: ACCESSES
   validates :status, inclusion: STATUSES
+  
   belongs_to :user
   
   after_initialize do |goal|
