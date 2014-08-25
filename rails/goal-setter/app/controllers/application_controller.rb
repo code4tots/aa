@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   def current_user
     User.find_by_session_token(session['session_token'])
   end
+  
+  def user_params
+    params[:user].permit(:username, :password)
+  end
 end

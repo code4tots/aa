@@ -1,0 +1,9 @@
+<h1>Sign in!</h1>
+
+<%= render partial: 'users/form',
+  locals: {
+    user: @user, 
+    url: session_url, 
+    method: :post, 
+    submit_message: 'sign in' } %>
+

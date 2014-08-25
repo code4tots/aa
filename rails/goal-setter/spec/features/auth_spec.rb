@@ -11,8 +11,8 @@ feature 'the signup process' do
     
     before :each do
       visit new_user_url
-      fill_in 'username', with: 'some_username'
-      fill_in 'password', with: 'some_password'
+      fill_in 'user[username]', with: 'some_username'
+      fill_in 'user[password]', with: 'some_password'
       click_on 'sign up'
     end
     
@@ -25,8 +25,8 @@ end
 feature 'logging in' do
   before :each do
     visit new_session_url
-    fill_in 'username', with: 'some_username'
-    fill_in 'password', with: 'some_password'
+    fill_in 'user[username]', with: 'some_username'
+    fill_in 'user[password]', with: 'some_password'
     click_on 'sign in'
   end
   
@@ -45,8 +45,8 @@ feature 'logging out' do
   end
   
   scenario "doesn't show username on the homepage after logout" do
-    fill_in 'username', with: 'some_username'
-    fill_in 'password', with: 'some_password'
+    fill_in 'user[username]', with: 'some_username'
+    fill_in 'user[password]', with: 'some_password'
     click_on 'sign in'
     click_on 'sign out'
     expect(page).to have_no_content 'some_username'
