@@ -1,7 +1,0 @@
-<%= form_for item, url: url, method: method do |f| %>
-  <% item.class.column_names.each do |column_name| %>
-    t.label column_name
-    t.text_field column_name
-  <% end %> <br />
-  <%= t.submit %>
-<% end %>
