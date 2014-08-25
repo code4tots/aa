@@ -1,9 +1,25 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string(255)      not null
+#  password_digest :string(255)      not null
+#  session_token   :string(255)      not null
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 class User < ActiveRecord::Base
+  include Commentable
+  
   validates :username, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :session_token, presence: true, uniqueness: true
   
   has_many :goals, dependent: :destroy
+  has_many :comments, as: :commentable
+  has_many :made_comments, class_name: :Comment
   
   after_initialize do |user|
     user.session_token ||= self.class.generate_session_token

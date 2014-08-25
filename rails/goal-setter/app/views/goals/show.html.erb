@@ -1,0 +1,18 @@
+<h1><%= @goal.name %></h1>
+
+<%= render partial: 'short', locals: { goal: @goal } %>
+
+<p><%= @goal.description %></p>
+
+<%= link_to 'edit', edit_goal_url(@goal) %>
+
+<br />
+
+<!-- Show all the comments -->
+<% Comment.where(commentable: @goal).order(:created_at).each do |comment| %>
+  <%= render partial: 'comments/short', locals: { comment: comment } %>
+<% end %>
+
+<br />
+Comments form:
+<%= render partial: 'comments/form', locals: { comment: Comment.new(commentable: @goal) } %>

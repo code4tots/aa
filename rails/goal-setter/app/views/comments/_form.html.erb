@@ -1,0 +1,6 @@
+<%= form_for comment, url: comments_url, method: :post do |f| %>
+  <%= f.hidden_field :commentable_id %>
+  <%= f.hidden_field :commentable_type %>
+  <%= f.text_area :content %>
+  <%= f.submit :submit %>
+<% end %>

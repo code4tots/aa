@@ -1,4 +1,8 @@
-<%= goal.name %>
-<%= goal.user.username %>
-<%= goal.status %>
-<%= goal.access %>
+
+<%= link_to goal_url(goal) do %>
+Name: <%= goal.name %> <br />
+User: <%= goal.user.username %> <br />
+Status: <%= goal.status %> <br />
+Access: <%= goal.access %> <br />
+<br />
+<% end %>

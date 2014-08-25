@@ -1,4 +1,19 @@
+# == Schema Information
+#
+# Table name: goals
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  name        :string(255)      not null
+#  access      :string(255)      not null
+#  description :text             not null
+#  status      :string(255)      not null
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Goal < ActiveRecord::Base
+  include Commentable
   
   ACCESSES = %w(public private)
   STATUSES = %w(pending completed)
@@ -6,6 +21,7 @@ class Goal < ActiveRecord::Base
   validates :user_id, :name, :access, :description, :status, presence: true
   validates :access, inclusion: ACCESSES
   validates :status, inclusion: STATUSES
+  
   belongs_to :user
   
   after_initialize do |goal|

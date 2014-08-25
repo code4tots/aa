@@ -20390,3 +20390,918 @@ Processing by GoalsController#index as HTML
   [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
 Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms)
   [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (8.7ms)
+  Rendered users/new.html.erb within layouts/application (11.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 41ms (Views: 28.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"some_username", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'some_username' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."session_token" = 'DHQr-XXR3ZXe9Nzy48UNUw' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-25 05:35:00.167464"], ["password_digest", "$2a$10$MvUMHBJSJ2uQJhWLcPrpVOZ2ZW2TpJRz17zrbKn.Shp78MphBumEG"], ["session_token", "DHQr-XXR3ZXe9Nzy48UNUw"], ["updated_at", "2014-08-25 05:35:00.167464"], ["username", "some_username"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'some_username' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'GNb3if5FgMcJSjbDGmE3ZQ' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["session_token", "GNb3if5FgMcJSjbDGmE3ZQ"], ["updated_at", "2014-08-25 05:35:00.170830"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users
+Completed 302 Found in 77ms (ActiveRecord: 1.7ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.5ms)
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'GNb3if5FgMcJSjbDGmE3ZQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'GNb3if5FgMcJSjbDGmE3ZQ' LIMIT 1[0m
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"some_username", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'some_username' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."session_token" = 'qDrWLW8-MF4Vxx2T166JNA' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-25 05:35:00.249072"], ["password_digest", "$2a$10$Y4apFz56qHL2.CbfBmr2C.iWcMMzqBIxz1krLZcPrL6tICA5umQQS"], ["session_token", "qDrWLW8-MF4Vxx2T166JNA"], ["updated_at", "2014-08-25 05:35:00.249072"], ["username", "some_username"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'some_username' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'LIUdv6H4wAoy88gkTya3cQ' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["session_token", "LIUdv6H4wAoy88gkTya3cQ"], ["updated_at", "2014-08-25 05:35:00.250646"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users
+Completed 302 Found in 62ms (ActiveRecord: 0.6ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'LIUdv6H4wAoy88gkTya3cQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'LIUdv6H4wAoy88gkTya3cQ' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'LIUdv6H4wAoy88gkTya3cQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'LIUdv6H4wAoy88gkTya3cQ' LIMIT 1[0m
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+Started POST "/session" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"some_username", "password"=>"[FILTERED]"}, "commit"=>"sign in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'some_username' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'some_username' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'IzXG2HFZi7bhbcNH7JPlpQ' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["session_token", "IzXG2HFZi7bhbcNH7JPlpQ"], ["updated_at", "2014-08-25 05:35:00.323653"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 60ms (ActiveRecord: 0.2ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'IzXG2HFZi7bhbcNH7JPlpQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'IzXG2HFZi7bhbcNH7JPlpQ' LIMIT 1
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"some_username", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'some_username' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."session_token" = 'o6YUQF5cWVUytLe6MasyEA' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-25 05:35:00.402518"], ["password_digest", "$2a$10$aGKS/gT5ZeW6y3jZIPhOzOQ4citDyD8bA7Eq38X3xmNzv6rZvNWwi"], ["session_token", "o6YUQF5cWVUytLe6MasyEA"], ["updated_at", "2014-08-25 05:35:00.402518"], ["username", "some_username"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'some_username' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'Vz2kK-rzmDPZV9bCUh-ypQ' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["session_token", "Vz2kK-rzmDPZV9bCUh-ypQ"], ["updated_at", "2014-08-25 05:35:00.403876"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users
+Completed 302 Found in 62ms (ActiveRecord: 0.6ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'Vz2kK-rzmDPZV9bCUh-ypQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'Vz2kK-rzmDPZV9bCUh-ypQ' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'Vz2kK-rzmDPZV9bCUh-ypQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'Vz2kK-rzmDPZV9bCUh-ypQ' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started POST "/session" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"some_username", "password"=>"[FILTERED]"}, "commit"=>"sign in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'some_username' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'some_username' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'YQ2OdLWjqNcXn8I_j5cozQ' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["session_token", "YQ2OdLWjqNcXn8I_j5cozQ"], ["updated_at", "2014-08-25 05:35:00.474388"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 61ms (ActiveRecord: 0.3ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'YQ2OdLWjqNcXn8I_j5cozQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'YQ2OdLWjqNcXn8I_j5cozQ' LIMIT 1
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'YQ2OdLWjqNcXn8I_j5cozQ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'some_username' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'LmRgqZYv6k102pHf74FMBA' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["session_token", "LmRgqZYv6k102pHf74FMBA"], ["updated_at", "2014-08-25 05:35:00.481435"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.7ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'user1' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."session_token" = 'AAIm9Xx_vBxmDHHiRDNyTA' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-25 05:35:00.556540"], ["password_digest", "$2a$10$fwCs2sejE7.1Rg1AnITCe.h0DsPx6IhDNa61sBHsJPmMZKZBHTDdG"], ["session_token", "AAIm9Xx_vBxmDHHiRDNyTA"], ["updated_at", "2014-08-25 05:35:00.556540"], ["username", "user1"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'a-9WlJLJaPtFDMbRc1iF7Q' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["session_token", "a-9WlJLJaPtFDMbRc1iF7Q"], ["updated_at", "2014-08-25 05:35:00.557910"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users
+Completed 302 Found in 63ms (ActiveRecord: 0.6ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'a-9WlJLJaPtFDMbRc1iF7Q' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'a-9WlJLJaPtFDMbRc1iF7Q' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'a-9WlJLJaPtFDMbRc1iF7Q' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'ZlEJyhAfjRBcYx-kigs7zQ' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["session_token", "ZlEJyhAfjRBcYx-kigs7zQ"], ["updated_at", "2014-08-25 05:35:00.564774"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user2", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'user2' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."session_token" = 'ld9lxhi_iTvJxZt6WKoBjw' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-25 05:35:00.634729"], ["password_digest", "$2a$10$4dARLgkK5dNhVN4PKifou.JRvBerCFdtWlR5Vbckge/YIOTf9hpNm"], ["session_token", "ld9lxhi_iTvJxZt6WKoBjw"], ["updated_at", "2014-08-25 05:35:00.634729"], ["username", "user2"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user2' AND "users"."id" != 2) LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = '5V7Rmq7oaNob5_N0UJxdvw' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["session_token", "5V7Rmq7oaNob5_N0UJxdvw"], ["updated_at", "2014-08-25 05:35:00.636000"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 61ms (ActiveRecord: 0.4ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = '5V7Rmq7oaNob5_N0UJxdvw' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = '5V7Rmq7oaNob5_N0UJxdvw' LIMIT 1
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = '5V7Rmq7oaNob5_N0UJxdvw' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user2' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'C3BpqZ8v1H6j8OPbchV1WQ' AND "users"."id" != 2) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["session_token", "C3BpqZ8v1H6j8OPbchV1WQ"], ["updated_at", "2014-08-25 05:35:00.642956"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by GoalsController#index as HTML
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (3.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'user1' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."session_token" = 'HG3Kfqssnc-8-O6JqzAhpQ' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-25 05:35:00.726028"], ["password_digest", "$2a$10$1eKD4Q.fIduXsm4UPSTod.9QLRLlucBVbhyH9vZUe6pgDUxTlz8yK"], ["session_token", "HG3Kfqssnc-8-O6JqzAhpQ"], ["updated_at", "2014-08-25 05:35:00.726028"], ["username", "user1"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'wI9HWLSY0ibaVdp-J-1QrQ' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["session_token", "wI9HWLSY0ibaVdp-J-1QrQ"], ["updated_at", "2014-08-25 05:35:00.727782"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 63ms (ActiveRecord: 0.6ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'wI9HWLSY0ibaVdp-J-1QrQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'wI9HWLSY0ibaVdp-J-1QrQ' LIMIT 1
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'wI9HWLSY0ibaVdp-J-1QrQ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = '5GE3DsZ5WpB8xI_H1vy9AQ' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["session_token", "5GE3DsZ5WpB8xI_H1vy9AQ"], ["updated_at", "2014-08-25 05:35:00.734794"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user2", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'user2' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."session_token" = '-36MpKgbzSB3eaZi0npejQ' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-25 05:35:00.805262"], ["password_digest", "$2a$10$CLNcDhshLzJqxvWaff0nq.uCDn1oYLcdO6O7pYlSCHb6rRwiaEAXu"], ["session_token", "-36MpKgbzSB3eaZi0npejQ"], ["updated_at", "2014-08-25 05:35:00.805262"], ["username", "user2"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user2' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'CPN6WjaHovA1sciF84fL_g' AND "users"."id" != 2) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["session_token", "CPN6WjaHovA1sciF84fL_g"], ["updated_at", "2014-08-25 05:35:00.806584"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users
+Completed 302 Found in 62ms (ActiveRecord: 0.4ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'CPN6WjaHovA1sciF84fL_g' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'CPN6WjaHovA1sciF84fL_g' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'CPN6WjaHovA1sciF84fL_g' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user2' AND "users"."id" != 2) LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'NxkwTw6FNE_w80ryp4atUw' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["session_token", "NxkwTw6FNE_w80ryp4atUw"], ["updated_at", "2014-08-25 05:35:00.818903"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mGoal Load (0.0ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered goals/index.html.erb within layouts/application (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.9ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'user1' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."session_token" = '008qG3BMv6x_ulWJGnEzEQ' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-25 05:35:00.895961"], ["password_digest", "$2a$10$dyoWCurvRU1TolZuKzE9tunK/9hvG4/RVOj9/B1c7s4DEdDtxNoo6"], ["session_token", "008qG3BMv6x_ulWJGnEzEQ"], ["updated_at", "2014-08-25 05:35:00.895961"], ["username", "user1"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'QpBX0DKeNA9O_GhFsFy0YQ' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["session_token", "QpBX0DKeNA9O_GhFsFy0YQ"], ["updated_at", "2014-08-25 05:35:00.897370"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users
+Completed 302 Found in 62ms (ActiveRecord: 0.6ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'QpBX0DKeNA9O_GhFsFy0YQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'QpBX0DKeNA9O_GhFsFy0YQ' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'QpBX0DKeNA9O_GhFsFy0YQ' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'cB9XZoV1ZNLRGnvG8rXLJw' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["session_token", "cB9XZoV1ZNLRGnvG8rXLJw"], ["updated_at", "2014-08-25 05:35:00.904291"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user2", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'user2' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."session_token" = '9z4T0VctedXSzTXcZ2hTIQ' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-25 05:35:00.974179"], ["password_digest", "$2a$10$SikjaZR7QA5DD5PmKMYy4ubto5Wv/1yabspFytr1XapK90Jnuxxd."], ["session_token", "9z4T0VctedXSzTXcZ2hTIQ"], ["updated_at", "2014-08-25 05:35:00.974179"], ["username", "user2"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user2' AND "users"."id" != 2) LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'nA7CKjxJxAgSUQQYTewMFg' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["session_token", "nA7CKjxJxAgSUQQYTewMFg"], ["updated_at", "2014-08-25 05:35:00.975519"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 61ms (ActiveRecord: 0.4ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'nA7CKjxJxAgSUQQYTewMFg' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'nA7CKjxJxAgSUQQYTewMFg' LIMIT 1
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'nA7CKjxJxAgSUQQYTewMFg' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user2' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'RPG3B33liFTFSr83LrUAdg' AND "users"."id" != 2) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["session_token", "RPG3B33liFTFSr83LrUAdg"], ["updated_at", "2014-08-25 05:35:00.983078"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started POST "/session" for 127.0.0.1 at 2014-08-24 22:35:00 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'user1' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'n9bUaOqN62228K9AKRtvnA' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["session_token", "n9bUaOqN62228K9AKRtvnA"], ["updated_at", "2014-08-25 05:35:01.052878"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users
+Completed 302 Found in 61ms (ActiveRecord: 0.3ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'n9bUaOqN62228K9AKRtvnA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'n9bUaOqN62228K9AKRtvnA' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#index as HTML
+  [1m[35mGoal Load (0.0ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'n9bUaOqN62228K9AKRtvnA' LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'n9bUaOqN62228K9AKRtvnA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'n9bUaOqN62228K9AKRtvnA' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'user1' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."session_token" = '9YF9bcapxWg8IcTSreE1Zw' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-25 05:35:01.129215"], ["password_digest", "$2a$10$nd/vCwhQ0m3fe8uX/J4HX.nYtxi4uRN2u0GZVH7mIN8KbYF7Hswdm"], ["session_token", "9YF9bcapxWg8IcTSreE1Zw"], ["updated_at", "2014-08-25 05:35:01.129215"], ["username", "user1"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'SUP3Aj5ceUg_MxbYIUuVuw' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["session_token", "SUP3Aj5ceUg_MxbYIUuVuw"], ["updated_at", "2014-08-25 05:35:01.130651"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users
+Completed 302 Found in 62ms (ActiveRecord: 0.6ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'SUP3Aj5ceUg_MxbYIUuVuw' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'SUP3Aj5ceUg_MxbYIUuVuw' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'SUP3Aj5ceUg_MxbYIUuVuw' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = '31ETHJhBGx2VB9_7kEELCA' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["session_token", "31ETHJhBGx2VB9_7kEELCA"], ["updated_at", "2014-08-25 05:35:01.137543"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user2", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'user2' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."session_token" = 'v5QeZOqbqfq_K0ksCggu0A' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-25 05:35:01.206941"], ["password_digest", "$2a$10$xLf.pI44ExZnb4VPxLnqI.xrkxM26VBm3TfcpXPB8f.z0rYokNBC."], ["session_token", "v5QeZOqbqfq_K0ksCggu0A"], ["updated_at", "2014-08-25 05:35:01.206941"], ["username", "user2"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user2' AND "users"."id" != 2) LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'sXH7WSOsEIk9uDpbWulppw' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["session_token", "sXH7WSOsEIk9uDpbWulppw"], ["updated_at", "2014-08-25 05:35:01.208209"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 61ms (ActiveRecord: 0.4ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'sXH7WSOsEIk9uDpbWulppw' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'sXH7WSOsEIk9uDpbWulppw' LIMIT 1
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'sXH7WSOsEIk9uDpbWulppw' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user2' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = '5EFlTpS0Mzmdv2niN4FYbg' AND "users"."id" != 2) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["session_token", "5EFlTpS0Mzmdv2niN4FYbg"], ["updated_at", "2014-08-25 05:35:01.214986"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started POST "/session" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'user1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["session_token", "k2SFMb-jJB9UZg93eFmqzA"], ["updated_at", "2014-08-25 05:35:01.284660"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users
+Completed 302 Found in 60ms (ActiveRecord: 0.3ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/goals/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#new as HTML
+  Rendered goals/_form.html.erb (3.3ms)
+  Rendered goals/new.html.erb within layouts/application (4.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+Started POST "/goals" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "goal"=>{"name"=>"goal1", "status"=>"pending", "access"=>"public", "description"=>"public goal1 by user 1"}, "commit"=>"create goal"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "goals" ("access", "created_at", "description", "name", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["access", "public"], ["created_at", "2014-08-25 05:35:01.308381"], ["description", "public goal1 by user 1"], ["name", "goal1"], ["status", "pending"], ["updated_at", "2014-08-25 05:35:01.308381"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/goals
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered goals/_short.html.erb (1.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1
+  Rendered goals/index.html.erb within layouts/application (3.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+Started GET "/goals/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#new as HTML
+  Rendered goals/_form.html.erb (1.3ms)
+  Rendered goals/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+Started POST "/goals" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "goal"=>{"name"=>"goal2", "status"=>"pending", "access"=>"private", "description"=>"private goal2 by user 1"}, "commit"=>"create goal"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "goals" ("access", "created_at", "description", "name", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["access", "private"], ["created_at", "2014-08-25 05:35:01.325383"], ["description", "private goal2 by user 1"], ["name", "goal2"], ["status", "pending"], ["updated_at", "2014-08-25 05:35:01.325383"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/goals
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#index as HTML
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered goals/_short.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered goals/_short.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (7.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms)
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#index as HTML
+  [1m[35mGoal Load (0.1ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered goals/_short.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered goals/_short.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (2.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'k2SFMb-jJB9UZg93eFmqzA' LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'user1' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."session_token" = 'y1S9kW7f1ZfiyJPUttPhoA' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-25 05:35:01.411570"], ["password_digest", "$2a$10$T61u3khvOxVP/OG3zQ6/GeUCTOGW1VxRPUJ4RyCK35YXp48xuOzk2"], ["session_token", "y1S9kW7f1ZfiyJPUttPhoA"], ["updated_at", "2014-08-25 05:35:01.411570"], ["username", "user1"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'KW5HRimoYEMgJWr2_qh5TA' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["session_token", "KW5HRimoYEMgJWr2_qh5TA"], ["updated_at", "2014-08-25 05:35:01.413028"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users
+Completed 302 Found in 62ms (ActiveRecord: 0.6ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KW5HRimoYEMgJWr2_qh5TA' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KW5HRimoYEMgJWr2_qh5TA' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'KW5HRimoYEMgJWr2_qh5TA' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'msl7W6-hmLRKUWKftlQwXw' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["session_token", "msl7W6-hmLRKUWKftlQwXw"], ["updated_at", "2014-08-25 05:35:01.419974"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/users/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started POST "/users" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user2", "password"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'user2' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."session_token" = 'khyKHw_A4CuZ37mOgLdIXw' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "password_digest", "session_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-25 05:35:01.488995"], ["password_digest", "$2a$10$Ul5D7.ramK.WGm7m14Saluy4GBWXXuVHS6pM8jPmzw/6vlU8dSKye"], ["session_token", "khyKHw_A4CuZ37mOgLdIXw"], ["updated_at", "2014-08-25 05:35:01.488995"], ["username", "user2"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user2' AND "users"."id" != 2) LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'LhRtG29pEoruhx7Jb3yUCw' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["session_token", "LhRtG29pEoruhx7Jb3yUCw"], ["updated_at", "2014-08-25 05:35:01.490320"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 61ms (ActiveRecord: 0.4ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_short.html.erb (0.2ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'LhRtG29pEoruhx7Jb3yUCw' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'LhRtG29pEoruhx7Jb3yUCw' LIMIT 1
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'LhRtG29pEoruhx7Jb3yUCw' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user2' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'q2gjkOT9UIKpTobQvxwt1Q' AND "users"."id" != 2) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 2[0m  [["session_token", "q2gjkOT9UIKpTobQvxwt1Q"], ["updated_at", "2014-08-25 05:35:01.497079"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started POST "/session" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'user1' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["session_token", "P7MDuxNsnpgU8qwPXA0SeQ"], ["updated_at", "2014-08-25 05:35:01.567460"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users
+Completed 302 Found in 61ms (ActiveRecord: 0.3ms)
+Started GET "/users" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/_short.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/goals/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#new as HTML
+  Rendered goals/_form.html.erb (1.3ms)
+  Rendered goals/new.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+Started POST "/goals" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "goal"=>{"name"=>"goal1", "status"=>"pending", "access"=>"public", "description"=>"public goal1 by user 1"}, "commit"=>"create goal"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "goals" ("access", "created_at", "description", "name", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["access", "public"], ["created_at", "2014-08-25 05:35:01.581529"], ["description", "public goal1 by user 1"], ["name", "goal1"], ["status", "pending"], ["updated_at", "2014-08-25 05:35:01.581529"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/goals
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered goals/_short.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1
+  Rendered goals/index.html.erb within layouts/application (1.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+Started GET "/goals/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#new as HTML
+  Rendered goals/_form.html.erb (1.3ms)
+  Rendered goals/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+Started POST "/goals" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "goal"=>{"name"=>"goal2", "status"=>"pending", "access"=>"private", "description"=>"private goal2 by user 1"}, "commit"=>"create goal"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "goals" ("access", "created_at", "description", "name", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["access", "private"], ["created_at", "2014-08-25 05:35:01.595462"], ["description", "private goal2 by user 1"], ["name", "goal2"], ["status", "pending"], ["updated_at", "2014-08-25 05:35:01.595462"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/goals
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#index as HTML
+  [1m[35mGoal Load (0.0ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered goals/_short.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered goals/_short.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (2.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+Started DELETE "/session" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" = 'P7MDuxNsnpgU8qwPXA0SeQ' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."username" = 'user1' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."session_token" = 'w3wJ9vHE5xX1SoptMtv--w' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["session_token", "w3wJ9vHE5xX1SoptMtv--w"], ["updated_at", "2014-08-25 05:35:01.603342"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/session/new" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by SessionsController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/goals" for 127.0.0.1 at 2014-08-24 22:35:01 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered goals/_short.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered goals/index.html.erb within layouts/application (1.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.5ms)[0m  [1mrollback transaction[0m
