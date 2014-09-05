@@ -1,0 +1,30 @@
+<h1>Cat Listings</h1>
+
+<table>
+  <tr>
+    <% Cat.column_names.each do |column_name| %>
+      <th> <%= column_name %> </th>
+    <% end %>
+    <th> Edit </th>
+    <th> Cat Requests </th>
+  </tr>
+  
+  <% @cats.each do |cat| %>
+    <tr>
+      <% Cat.column_names.each do |column_name| %>
+        <td> <%= cat[column_name] %> </td>
+      <% end %>
+      <td>
+        <%= link_to 'edit', edit_cat_url(cat) %>
+      </td>
+      <td>
+      <% CatRentalRequest.where(cat_id: cat.id).order(:start_date).each do |cat_rental_request| %>
+        <%= cat_rental_request.start_date %>
+        <%= cat_rental_request.end_date %>
+        <%= cat_rental_request.status %>
+        <br />
+      <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,9 @@
+<h1>Sign up!</h1>
+
+<%= render partial: 'form',
+  locals: {
+  	user: @user, 
+  	url: users_url, 
+  	method: :post, 
+  	submit_message: 'sign up' } %>
+

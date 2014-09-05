@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My99cats</title>
+<!--   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+ -->  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= current_user.nil? ?
+  link_to("why don't you login?", new_session_url) :
+  current_user.user_name %>
+
+<%= current_user.nil? ? '' : button_to('logout', session_url(current_user.session_token), method: :delete) %>
+
+<%= yield %>
+
+</body>
+</html>

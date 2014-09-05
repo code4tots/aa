@@ -1,0 +1,6 @@
+<% band = Band.find(params[:id]) %>
+
+<% Band.column_names.each do |column| %>
+  <%= column %>
+  <%= band.send(column) %>
+<% end %>

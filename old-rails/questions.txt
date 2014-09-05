@@ -1,0 +1,12 @@
+
+
+Singular resources
+===================
+
+  https://github.com/appacademy/rails-curriculum/blob/master/w4d3/auth-part-ii.md
+  
+Says 'session' resource should be singular, and the controller should still be plural,
+but rails doesn't seem to like it when you do that (it still looks for a SessionController).
+
+In my version, I've just renamed the session resource to be a plural.
+

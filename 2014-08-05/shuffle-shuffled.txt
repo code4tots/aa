@@ -1,0 +1,15 @@
+  new_str = File.open(filename).readlines.shuffle
+  end
+
+    new_file.puts(line.chomp)
+  new_file = File.open(new_file_name, "w")
+  exit 'no file name' if filename == nil
+def line_shuffle filename
+
+
+  
+end
+line_shuffle(ARGV[0]) if __FILE__ == $PROGRAM_NAME
+
+  new_file_name = filename.match(/([^\.]*)(\.[^\.]*)?/)[1] + "-shuffled.txt"
+  new_str.each do |line|

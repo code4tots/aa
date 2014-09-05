@@ -1,0 +1,7 @@
+<h1>All da Cats</h1>
+
+<% @cats.each do |cat| %>
+  <%= cat.inspect %> <br />
+<% end %>
+
+<%= button_to 'new cat!', new_cat_url, method: 'get' %>

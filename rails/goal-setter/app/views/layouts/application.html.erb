@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GoalSetter</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= flash[:notice] %>
+<%= flash[:notice].nil? ? '' : raw('<br />') %>
+
+<% if current_user.nil? %>
+  <%= link_to 'sign in', new_session_url %> <br />
+<% else %>
+	You are currently signed in as <%= current_user.username %> <br />
+  <%= link_to 'sign out', session_url, method: :delete %> <br />
+<% end %>
+<%= link_to 'all users', users_url %> <br />
+<%= link_to 'all goals', goals_url %> <br />
+
+<%= yield %>
+
+</body>
+</html>

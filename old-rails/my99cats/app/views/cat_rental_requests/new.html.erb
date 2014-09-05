@@ -1,0 +1,19 @@
+<h1>Make a Cat Rental Request!</h1>
+
+<%= form_tag(cat_rental_requests_url, method: 'post') do %>
+
+  <%= label_tag "Pick your Cat!: " %>
+  <%= select_tag "cat_rental_request[cat_id]",
+    options_for_select(Cat.all.map { |c| [c.name, c.id] }) %>
+  <br />
+  
+  <%= label_tag "Pick your start date: " %>
+  <%= date_field_tag "cat_rental_request[start_date]" %>
+  <br />
+  
+  <%= label_tag "Pick your end date: " %>
+  <%= date_field_tag "cat_rental_request[end_date]" %>
+  <br />
+  
+  <%= submit_tag("New Cat Request!") %>
+<% end %>

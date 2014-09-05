@@ -1,0 +1,5 @@
+<h1>Build-A-Cat!</h1>
+
+<%= form_tag(cats_url, method: 'post') do %>
+  <%= render "form", cat: @cat, submit_button_text: 'new cat!' %>
+<% end %>

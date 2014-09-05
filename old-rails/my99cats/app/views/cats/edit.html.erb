@@ -1,0 +1,6 @@
+<h1>Edit a Cat!</h1>
+
+<%= form_tag(cat_url(params[:id]), method: 'patch') do %>
+  <%= render partial: "form", locals: {cat: Cat.find_by_id(params[:id])} %>
+  <%= submit_tag("Edit Cat!") %>
+<% end %>

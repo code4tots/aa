@@ -1,0 +1,12 @@
+<h1>Request A Cat</h1>
+
+<%= form_tag cat_rental_requests_url, method: 'post' do %>
+  <%= select_tag 'cat_rental_request[cat_id]',
+    options_for_select([ ['', nil] ] + Cat.all.map { |cat| [cat.name, cat.id] }) %>
+  
+  <%= date_field_tag 'cat_rental_request[start_date]' %>
+  <%= date_field_tag 'cat_rental_request[end_date]' %>
+    
+  <br />
+  <%= submit_tag 'submit request' %>
+<% end %>

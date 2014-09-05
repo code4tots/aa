@@ -1,0 +1,9 @@
+<h1>New Goal!</h1>
+
+<%= render partial: 'form',
+  locals: { 
+    goal: @goal,
+    url: goals_url,
+    method: :post, 
+    submit_message: 'create goal' } %>
+

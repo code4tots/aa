@@ -1,0 +1,5 @@
+<h1>Sign in!</h1>
+
+<%= form_tag session_url, method: 'post' do %>
+  <%= render partial: 'users/form', locals: { submit_tag_message: 'sign in!' } %>
+<% end %>

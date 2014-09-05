@@ -1,0 +1,7 @@
+<h1>All bands</h1>
+
+<% Band.all.each do |band| %>
+  <%= button_to band.name, band_url(band) %>
+  <br />
+<% end %>
+

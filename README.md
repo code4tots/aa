@@ -1,6 +1,7 @@
 App Academy Stuff
 =================
 
+<<<<<<< HEAD
 AA doesn't start for me until August 2014, but being the eager beaver that I
 am, I've decided to hunt the web for some preview material.
 
@@ -28,4 +29,8 @@ Some of the blogs I'm looking at for reference:
 
 Interesting post:
 	http://www.eriktrautman.com/posts/maximizing-your-bootcamp-experience
+=======
+AppAcademy has begun!!!
+>>>>>>> origin/master
 
+2014-08-04  w1d1

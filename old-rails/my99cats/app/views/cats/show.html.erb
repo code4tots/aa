@@ -1,0 +1,30 @@
+<h1>Cat Listing</h1>
+
+<table>
+  <% Cat.column_names.each do |column_name| %>
+    <tr>
+      <td> <%= column_name %> </td>
+      <td> <%= @cat[column_name] %> </td>
+    </tr>
+  <% end %>
+</table>
+
+
+<h2> Pending requests </h2>
+<% @cat.requests.order(:id).where(status: 'PENDING').each do |cat_rental_request| %>
+  <p>
+  <%= cat_rental_request.inspect %>
+  <% ['approve', 'deny'].each do |action| %>
+    <%= form_tag(send(action+'_cat_rental_request_url',cat_rental_request), method: 'post') do %>
+      <%= submit_tag(action) %>
+    <% end %>
+  <% end %>
+  </p>
+<% end %>
+
+<h2> Approved requests </h2>
+<% @cat.requests.order(:id).where(status: 'APPROVED').each do |cat_rental_request| %>
+  <p>
+  <%= cat_rental_request.inspect %>
+  </p>
+<% end %>

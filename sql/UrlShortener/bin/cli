@@ -1,0 +1,55 @@
+require 'launchy' 
+
+def get_user
+  begin
+    print "Please input your email: "
+    email = gets.strip
+    User.find_by! email: email
+  rescue ActiveRecord::RecordNotFound => e
+    puts e.message
+    retry
+  end
+end
+
+def get_action
+  while true
+    print "(C)reate a url or (O)pen a url?"
+    response = gets.strip
+    break if ['C','O'].include?(response.upcase)
+    puts "You must choose 'c' or 'o'"
+  end
+  response.upcase
+end
+
+def get_url
+  print "Input url: "
+  gets.strip
+end
+
+def create_url(user)
+  url = get_url
+  short_url = ShortenedUrl.find_by(long_url: url)
+  if short_url.nil?
+    short_url = ShortenedUrl.create_for_user_and_long_url!(user, url)
+  end
+  puts "Your short url is #{short_url['short_url']}"
+end
+
+def open_url(user)
+  begin
+    url = get_url
+    Launchy.open(ShortenedUrl.where(short_url: url).take.long_url)
+  rescue ActiveRecord::RecordNotFound => e
+    puts e.message
+    retry
+  end
+end
+
+if $PROGRAM_NAME == __FILE__
+  user = get_user
+  action = get_action
+  case action
+  when 'C' then create_url(user)
+  when 'O' then open_url(user)
+  end
+end

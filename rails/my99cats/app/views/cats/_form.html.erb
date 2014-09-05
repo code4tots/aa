@@ -1,0 +1,36 @@
+<%= label_tag "Name" %>
+<%= text_field_tag "cat[name]", cat.name %>
+<br />
+
+<%= label_tag "Sex" %>
+<% if cat.sex == 'M' %>
+  <%= radio_button_tag 'cat[sex]', 'M', checked: 'checked' %>
+<% else %>
+  <%= radio_button_tag 'cat[sex]', 'M' %>
+<% end %>
+Male
+
+<% if cat.sex == 'F' %>
+  <%= radio_button_tag 'cat[sex]', 'F', checked: 'checked' %>
+<% else %>
+  <%= radio_button_tag 'cat[sex]', 'F' %>
+<% end %>
+Female
+<br />
+
+<%= label_tag "Color" %>
+<%= select_tag 'cat[color]', options_for_select([''] + Cat::COLORS, cat.color) %>
+<br />
+
+<%= label_tag "birth date" %>
+<%= date_field_tag 'cat[birth_date]', cat.birth_date %>
+<br />
+
+<%= label_tag "age" %>
+<%= text_field_tag 'cat[age]', cat.age %>
+<br />
+
+<%= label_tag "description" %>
+<%= text_area_tag 'cat[description]', cat.description %>
+<br />
+<%= submit_tag submit_button_text %>
