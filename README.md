@@ -12,15 +12,15 @@ guide, and this github repo as my scratchpad, I set out to learn some stuff.
 Some of the blogs I'm looking at for reference:
 
 	current:
-		more eyecandy and/or more loaded content:
-			http://thejaggedhedgehog.tumblr.com/
-			http://april.arc.us/
-			http://jenniferchen.io/
+		http://thejaggedhedgehog.tumblr.com/
+		http://april.arc.us/
+		http://jenniferchen.io/
 		
-		less loaded and/or less eyecandy:
-			http://damarvincode.tumblr.com/
-			http://margielythoughts.tumblr.com/
-			http://johnshenawesomeblog.tumblr.com/
+		http://damarvincode.tumblr.com/
+		http://margielythoughts.tumblr.com/
+		http://johnshenawesomeblog.tumblr.com/
+		
+		http://philpee2.tumblr.com/
 	
 	past:
 		http://www.eriktrautman.com/
